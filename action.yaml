@@ -1,6 +1,9 @@
 name: 'Check Pull Request Comments'
 author: 'amine-arb-2019'
 inputs:
+  github-token:
+    description: 'The GitHub token'
+    required: true    
   string-list:
     description: 'List of string to be checked in comment body'
     required: true    
