@@ -6,7 +6,7 @@ async function run() {
     const { GITHUB_TOKEN } = process.env;
     let prHasComment = false;
     if (!GITHUB_TOKEN) {
-        core.setFailed('If "reaction" is supplied, GITHUB_TOKEN is required');
+        core.setFailed('GITHUB_TOKEN is required');
         return;
     } 
     
@@ -17,7 +17,7 @@ async function run() {
 
 
     const { payload } = github.context;
-    const labelNameToWatchFor = core.getInput("label-name-to-watch-for");
+    const labelNameToWatchFor = core.getInput("string-list");
 
     let prHasLabel = false;
     payload.pull_request.labels.forEach((label) => {
