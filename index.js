@@ -4,7 +4,8 @@ const core = require("@actions/core");
 async function run() {
 
 
-    const { context } = github.context;
+    const { context } = github;
+    console.log("context")
 
     const { GITHUB_TOKEN } = core.getInput("github-token");
     console.log("Github token " + core.getInput("github-token"));
