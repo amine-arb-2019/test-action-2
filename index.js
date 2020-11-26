@@ -8,7 +8,13 @@ async function run() {
     if (!GITHUB_TOKEN) {
         core.setFailed('If "reaction" is supplied, GITHUB_TOKEN is required');
         return;
-    }    
+    } 
+    
+    
+    console.log("context" + context);
+    console.log("context.eventName" + context.eventName);
+    console.log("context.payload" + context.payload);
+
 
     const { payload } = github.context;
     const labelNameToWatchFor = core.getInput("label-name-to-watch-for");
