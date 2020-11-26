@@ -3,13 +3,13 @@ const core = require("@actions/core");
 
 async function run() {
 
-    const { GITHUB_TOKEN } = process.env;
-    let prHasComment = false;
+    const { GITHUB_TOKEN } = core.getInput("github-token");
     if (!GITHUB_TOKEN) {
         core.setFailed('GITHUB_TOKEN is required');
         return;
     } 
-    
+    let prHasComment = false;
+
     
     console.log("context" + context);
     console.log("context.eventName" + context.eventName);
