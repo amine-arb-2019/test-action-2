@@ -19,7 +19,7 @@ async function run() {
     const { payload } = github.context;
     const labelNameToWatchFor = core.getInput("string-list");
 
-    let prHasLabel = false;
+/**  let prHasLabel = false;
     payload.pull_request.labels.forEach((label) => {
         if (label.name === labelNameToWatchFor) {
             prHasLabel = true;
@@ -42,11 +42,8 @@ async function run() {
         });
 
         const author = context.payload.pull_request.author;
-        console.log("Author: " + author);
-    }
-
-
-    }
+        console.log("Author: " + author); */  
+}
 
 
 run().catch(err => {
