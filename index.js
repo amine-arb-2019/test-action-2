@@ -5,16 +5,16 @@ async function run() {
 
 
     const { context } = github;
-    console.log("context")
+    core.debug("context")
 
     const { GITHUB_TOKEN } = core.getInput("github-token");
-    console.log("Github token " + core.getInput("github-token"));
+    core.debug("Github token " + core.getInput("github-token"));
     let prHasComment = false;
 
     
-    console.log("context" + context);
-    console.log("context.eventName" + context.eventName);
-    console.log("context.payload" + context.payload);
+    core.debug("context" + context);
+    core.debug("context.eventName" + context.eventName);
+    core.debug("context.payload" + context.payload);
 
 
     const { payload } = github.context;
@@ -48,7 +48,7 @@ async function run() {
 
 
 run().catch(err => {
-    console.error(err);
+    core.error(err);
     core.setFailed("Unexpected error");
 });
 
