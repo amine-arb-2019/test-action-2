@@ -1,0 +1,12 @@
+name: "Label Check Action"
+description: "Check that passes/fails depending on the presence of a label on a PR."
+branding:
+  color: green
+  icon: check
+inputs:
+  label-name-to-watch-for:
+    description: "The label to watch for. If this label has not been applied to the PR, this check will fail. If it has, it will pass."
+    required: true
+runs:
+  using: "node12"
+  main: "index.js"
