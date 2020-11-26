@@ -4,10 +4,7 @@ const core = require("@actions/core");
 async function run() {
 
     const { GITHUB_TOKEN } = core.getInput("github-token");
-    if (!GITHUB_TOKEN) {
-        core.setFailed('GITHUB_TOKEN is required');
-        return;
-    } 
+    console.log("Github token " + core.getInput("github-token"));
     let prHasComment = false;
 
     
