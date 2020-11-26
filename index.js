@@ -3,6 +3,9 @@ const core = require("@actions/core");
 
 async function run() {
 
+
+    const { context } = github.context;
+
     const { GITHUB_TOKEN } = core.getInput("github-token");
     console.log("Github token " + core.getInput("github-token"));
     let prHasComment = false;
