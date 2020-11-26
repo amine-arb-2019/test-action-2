@@ -5,17 +5,14 @@ async function run() {
 
 
     const { context } = github;
-    core.debug("context")
+    core.debug(`context`)
 
     const { GITHUB_TOKEN } = core.getInput("github-token");
     core.debug("Github token " + core.getInput("github-token"));
     let prHasComment = false;
-    console.log(`Hello ${GITHUB_TOKEN}!`);
 
-    console.log(`context ${context}!`);
+    core.info(`context ${context}!`);
 
-    core.info("context" + context);
-    core.info("context.eventName" + context.eventName);
 //    core.debug("context.payload" + context.payload);
 
 
